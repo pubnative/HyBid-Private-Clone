@@ -8,6 +8,9 @@ jobs:
         steps:
             - checkout
             - run:
+                name: SSH
+                command: ssh-keygen -t ed25519 -C "orkhan.alizada@verve.com"
+            - run:
                 name: Publish private repo into public one
                 command: |
                   if [ "${CIRCLE_BRANCH}" == "master" ] ; then
