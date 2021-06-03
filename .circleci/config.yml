@@ -7,9 +7,9 @@ jobs:
             xcode: "12.0.0"
         steps:
             - checkout
-            - run:
-                name: SSH
-                command: ssh-keygen -t ed25519 -C "orkhan.alizada@verve.com"
+            - add_ssh_keys:
+                fingerprints:
+                    - "65:e9:57:c4:ba:ab:07:4d:b9:8a:1b:55:16:38:93:7f"
             - run:
                 name: Publish private repo into public one
                 command: |
