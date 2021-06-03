@@ -26,5 +26,6 @@ jobs:
                         git merge --continue
                     fi
 
+                    git push
                     git remote remove private-hybid
                   fi
