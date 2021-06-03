@@ -11,21 +11,5 @@ jobs:
                 name: Publish private repo into public one
                 command: |
                   if [ "${CIRCLE_BRANCH}" == "master" ] ; then
-                     cd ~/pubnative
-                     &&
-                     git clone git@github.com:pubnative/pubnative-hybid-ios-sdk.git publicRepoWePushInto
-                     &&
-                     cd publicRepoWePushInto
-                     &&
-                     git remote add private-hybid ~/pubnative/pubnative-hybid-ios-sdk
-                     &&
-                     git fetch private-hybid --tags
-                     &&
-                     git merge --allow-unrelated-histories private-hybid/master --strategy-option=theirs -X rename-threshold=100% -m "Some message for merge editor."
-                     &&
-                     git rm .circleci/* -f
-                     &&
-                     git merge --continue
-                     &&
-                     git remote remove private-hybid
+                     cd ~/pubnative && git clone git@github.com:pubnative/pubnative-hybid-ios-sdk.git publicRepoWePushInto && cd publicRepoWePushInto && git remote add private-hybid ~/pubnative/pubnative-hybid-ios-sdk && git fetch private-hybid --tags && git merge --allow-unrelated-histories private-hybid/master --strategy-option=theirs -X rename-threshold=100% -m "Some message for merge editor." && git rm .circleci/* -f && git merge --continue && git remote remove private-hybid
                   fi
