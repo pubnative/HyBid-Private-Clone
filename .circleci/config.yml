@@ -10,6 +10,7 @@ jobs:
             - add_ssh_keys:
                 fingerprints:
                     - "f0:49:6e:a8:6a:d4:7a:04:e3:00:42:b0:41:b5:1d:e1"
+                    - "65:e9:57:c4:ba:ab:07:4d:b9:8a:1b:55:16:38:93:7f"
             - run:
                 name: Publish private repo into public one
                 command: |
